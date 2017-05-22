@@ -21,6 +21,9 @@ class Details extends CI_Controller {
         $data['destination'] = array(
             'site' => 'block_view/details',
         );
+
+        $this->load->helper('linker'); 
+
         $data['carDetails'] = $this->car_dealership->getSpecificCar($key);
         $this->load->view('modular_view_index', $data);
     }

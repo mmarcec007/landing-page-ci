@@ -4,12 +4,12 @@
             <h2 class="header"><?php echo $carDetails["completeCarName"]; ?></h2>
             <div class="card horizontal">
                 <div class="card-image">
-                    <img src="<?php echo base_url('assets/images/ford/ford_image.jpg'); ?>">
+                    <img src="<?php echo ford_images_folder(); ?>">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
                         <div>
-                            <?php echo $carDetails["completeCarNameOverview"] ?>
+                            <?php echo $carDetails["completeCarNameOverview"]  .  test_method();?>
                         </div>
                         <strong>
                             <?php echo $carDetails["price"]; ?>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <a href="<?php echo site_url('about') ?>">Back to List</a>
                     </div>
                 </div>
             </div>

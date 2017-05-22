@@ -1,18 +1,14 @@
 <div class="container">
     <?php $counter = 0; ?>
-    <ul class="collapsible popout" data-collapsible="accordion">
+    <ul class="collection" data-collapsible="accordion">
             <?php foreach ($collection as $car => $value) : ?>
-            <?php  $counter++; ?>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">filter_drama</i><?php echo $value["shortCarName"]; ?></div>
-                        <div class="collapsible-body">
-                            <span>
-                                <p>
-                                    <a href="<?php echo site_url("details/index/".$car); ?>">Details of <?php echo $car; ?></a>
-                                </p>
-                            </span>
-                        </div>
-                    </li>
+                <?php  $counter++; ?>
+                <li class="collection-item avatar">
+                    <img src="<?php echo base_url('assets/images/ford/ford_image.jpg'); ?>" alt="" class="circle">
+                    <span class="title"><?php echo $counter . ". " , $value["shortCarName"]; ?></span>
+                    <p> <?php echo $value["price"]; ?> </p>
+                    <a href="<?php echo to_view("details/index/", $car); ?>" class="secondary-content"><i class="material-icons">send</i></a>
+                </li>
             <?php endforeach ?>
         </div>
     </ul>

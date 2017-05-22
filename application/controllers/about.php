@@ -22,6 +22,8 @@ class About extends CI_Controller {
 		$data['destination'] = array(
 			'site' => 'block_view/about',
 		);
+
+        $this->load->helper('linker'); 
 		
 		$data['collection'] = $this->car_dealership->getAllCars();
 		$this->load->view('modular_view_index', $data);
