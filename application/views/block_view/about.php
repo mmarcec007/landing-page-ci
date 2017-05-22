@@ -1,38 +1,19 @@
-
 <div class="container">
     <?php $counter = 0; ?>
-    <p><?php echo count($collection); ?></p>
-        <?php foreach ($collection as $car => $value) : ?>
-        <?php  $counter++; ?>
-            <div class ="row">
-                <div class="col s12 m12">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="<?php echo base_url('assets/images/ford/ford_image.jpg'); ?>">
+    <ul class="collapsible popout" data-collapsible="accordion">
+            <?php foreach ($collection as $car => $value) : ?>
+            <?php  $counter++; ?>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i><?php echo $value["shortCarName"]; ?></div>
+                        <div class="collapsible-body">
+                            <span>
+                                <p>
+                                    <a href="<?php echo site_url("details/index/".$car); ?>">Details of <?php echo $car; ?></a>
+                                </p>
+                            </span>
                         </div>
-
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4"><?php echo $value["shortCarName"]; ?><i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">This is a link <?php echo $counter; ?></a></p>
-                        </div>
-
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4"><?php echo $value["completeCarName"]; ?><i class="material-icons right">close</i></span>
-                            <div>
-                                <?php echo $value["completeCarNameOverview"] ?>    
-                            </div>
-                            <strong>
-                                <?php echo $value["price"]; ?>
-                            </strong>
-
-                            <div>
-                                <?php echo $value["slogan"]; ?>
-                                <?php echo $value["description"]; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach ?>
-    </div>
+                    </li>
+            <?php endforeach ?>
+        </div>
+    </ul>
 </div>

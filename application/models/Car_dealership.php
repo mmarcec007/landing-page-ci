@@ -75,6 +75,18 @@ class Car_dealership extends CI_Model  {
 			return $this->cars;
 		}
 
+        /**
+         * Vollständiger Name des Autos
+         *
+         * @param string $carModel
+         * @return string
+         */
+        public function getSpecificCar($carModel){
+            if(array_key_exists($carModel, $this->cars)){
+                return $this->cars[$carModel];
+            }
+            return '';
+        }
 
 		/**
 		 * Vollständiger Name des Autos
