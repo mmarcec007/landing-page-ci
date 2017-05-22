@@ -7,9 +7,14 @@ if ( ! function_exists('test_method'))
         return "ceca";
     }
 
-    function ford_images_folder()
+    function ford_images()
     {
         return base_url('assets/images/ford/ford_image.jpg');
+    }
+
+    function ford_image($key)
+    {
+        return base_url('assets/images/ford/'.$key.'.jpg');
     }
 
     function to_view($view, $data)

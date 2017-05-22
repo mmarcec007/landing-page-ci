@@ -4,7 +4,7 @@
             <h2 class="header"><?php echo $carDetails["completeCarName"]; ?></h2>
             <div class="card horizontal">
                 <div class="card-image">
-                    <img src="<?php echo ford_images_folder(); ?>">
+                    <img src="<?php echo ford_image('ford_image'); ?>">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
